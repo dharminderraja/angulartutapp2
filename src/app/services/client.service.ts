@@ -11,7 +11,7 @@ export class ClientService {
   constructor(
     public angularFire:AngularFireDatabase
   ) { 
-    this.clients = this.angularFire.list('/clients/clients') as FirebaseListObservable<Client[]>;
+    this.clients = this.angularFire.list('/clients') as FirebaseListObservable<Client[]>;
   }
 
   getClients(){
@@ -23,7 +23,7 @@ export class ClientService {
   }
 
   getClient(id:string){
-    this.client = this.angularFire.object('/clients/clients/'+id) as FirebaseObjectObservable<Client>;
+    this.client = this.angularFire.object('/clients/'+id) as FirebaseObjectObservable<Client>;
     return this.client;
   }
 

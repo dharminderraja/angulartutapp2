@@ -26,6 +26,7 @@ import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 import { RegisterGuard } from './guards/register.guard';
 import { SettingsService } from './services/settings.service';
+import { RemotesettingService } from './services/remotesetting.service';
 const appRoutes: Routes = [
   {path:'', component:DashboardComponent, canActivate:[AuthGuard]},
   {path:'register', component:RegisterComponent, canActivate:[RegisterGuard]},
@@ -78,7 +79,8 @@ export const firebaseConfig = {
     AuthService,
     AuthGuard,
     SettingsService,
-    RegisterGuard
+    RegisterGuard,
+    RemotesettingService
   ],
   bootstrap: [AppComponent]
 })
